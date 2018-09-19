@@ -12,3 +12,17 @@ C:\Users\ghost\source\repos\On job\On job\obj\Debug\netcoreapp2.1\Onjob.RazorTar
 C:\Users\ghost\source\repos\On job\On job\obj\Debug\netcoreapp2.1\Onjob.dll
 C:\Users\ghost\source\repos\On job\On job\obj\Debug\netcoreapp2.1\Onjob.pdb
 C:\Users\ghost\source\repos\On job\On job\obj\Debug\netcoreapp2.1\Onjob.csprojAssemblyReference.cache
+E:\onlinetest\AsOnlineASTest1\On job\On job\bin\Debug\netcoreapp2.1\Onjob.deps.json
+E:\onlinetest\AsOnlineASTest1\On job\On job\bin\Debug\netcoreapp2.1\Onjob.runtimeconfig.json
+E:\onlinetest\AsOnlineASTest1\On job\On job\bin\Debug\netcoreapp2.1\Onjob.runtimeconfig.dev.json
+E:\onlinetest\AsOnlineASTest1\On job\On job\bin\Debug\netcoreapp2.1\Onjob.dll
+E:\onlinetest\AsOnlineASTest1\On job\On job\bin\Debug\netcoreapp2.1\Onjob.pdb
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.csprojAssemblyReference.cache
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.csproj.CoreCompileInputs.cache
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.RazorAssemblyInfo.cache
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.RazorAssemblyInfo.cs
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.AssemblyInfoInputs.cache
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.AssemblyInfo.cs
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.RazorTargetAssemblyInfo.cache
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.dll
+E:\onlinetest\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.pdb

@@ -43,6 +43,8 @@ namespace Onjob.Controllers
         public IActionResult Create(MonHoc monHoc)
         {
             monHoc.NgayTao = DateTime.Now;
+            monHoc.NgayCN = monHoc.NgayTao;
+            monHoc.NguoiCN = monHoc.NguoiTao;
             _context.MonHocs.Add(monHoc);
             _context.SaveChanges();
             return CreatedAtRoute("Get", new { id = monHoc.ID }, monHoc);
