@@ -26,19 +26,19 @@ namespace Onjob.Controllers
         }
 
         // GET api/<controller>/5
-       /* [HttpGet("{id}")]
-        public ActionResult<MonHoc> Get(long id)
+        [HttpGet("{id}")]
+        public ActionResult<GiaoVien> Get(long id)
         {
-            var item = _context.MonHocs.Find(id);
-            if (item == null)
+            var gv = _context.GiaoViens.Find(id);
+            if (gv == null)
             {
                 return NoContent();
             }
-            return item;
+            return gv;
         }
 
         // POST api/<controller>
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult Create(MonHoc monHoc)
         {
             _context.MonHocs.Add(monHoc);
