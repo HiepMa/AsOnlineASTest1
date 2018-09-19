@@ -38,16 +38,16 @@ namespace Onjob.Controllers
         }
 
         // POST api/<controller>
-        /*[HttpPost]
-        public IActionResult Create(MonHoc monHoc)
+        [HttpPost]
+        public IActionResult Create(GiaoVien giaoVien)
         {
-            _context.MonHocs.Add(monHoc);
+            _context.GiaoViens.Add(giaoVien);
             _context.SaveChanges();
-            return CreatedAtRoute("Get", new { id = monHoc.ID }, monHoc);
+            return CreatedAtRoute("Get", new { id = giaoVien.ID_GV }, giaoVien);
         }
 
         // PUT api/<controller>/5
-        [HttpPut("{id}")]
+        /*[HttpPut("{id}")]
         public IActionResult Update(MonHoc monHoc, long id)
         {
             var mh = _context.MonHocs.Find(id);
