@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ghost\\source\\repos\\On job\\On job\\Onjob.csproj",
+      "projectUniqueName": "E:\\onlinetest\\AsOnlineASTest1\\On job\\On job\\Onjob.csproj",
       "projectName": "Onjob",
-      "projectPath": "C:\\Users\\ghost\\source\\repos\\On job\\On job\\Onjob.csproj",
+      "projectPath": "E:\\onlinetest\\AsOnlineASTest1\\On job\\On job\\Onjob.csproj",
       "packagesPath": "C:\\Users\\ghost\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ghost\\source\\repos\\On job\\On job\\obj\\",
+      "outputPath": "E:\\onlinetest\\AsOnlineASTest1\\On job\\On job\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
