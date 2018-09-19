@@ -41,28 +41,36 @@ namespace Onjob.Controllers
         [HttpPost]
         public IActionResult Create(GiaoVien giaoVien)
         {
+            giaoVien.NgayTao = DateTime.Now;
+            giaoVien.NguoiCN = giaoVien.NguoiTao;
+            giaoVien.NgayCN = giaoVien.NgayTao;
             _context.GiaoViens.Add(giaoVien);
             _context.SaveChanges();
             return CreatedAtRoute("Get", new { id = giaoVien.ID_GV }, giaoVien);
         }
 
         // PUT api/<controller>/5
-        /*[HttpPut("{id}")]
-        public IActionResult Update(MonHoc monHoc, long id)
+        [HttpPut("{id}")]
+        public IActionResult Update(long id,GiaoVien gvm)
         {
-            var mh = _context.MonHocs.Find(id);
-            if (mh == null)
+            var gv = _context.GiaoViens.Find(id);
+            if (gv == null)
             {
                 return NoContent();
             }
-            mh.Ma = monHoc.Ma;
-            mh.Ten = monHoc.Ten;
-            mh.HienThi = monHoc.HienThi;
-            mh.NgayCN = DateTime.Now;
-            mh.NguoiCN = monHoc.NguoiCN;
-            mh.Khac = monHoc.Khac;
+            gv.Ma = gvm.Ma;
+            gv.Ho = gvm.Ho;
+            gv.MatKhau = gvm.MatKhau;
+            gv.GioiTinh = gvm.GioiTinh;
+            gv.Email = gvm.Email;
+            gv.DiaChi = gvm.DiaChi;
+            gv.DienThoai = gvm.DienThoai;
+            gv.NgaySinh = gv.NgaySinh;
+            gv.NguoiCN = gvm.NguoiCN;
+            gv.NgayCN = DateTime.Now;
+            gv.Khac_GV = gvm.Khac_GV;
 
-            _context.MonHocs.Update(mh);
+            _context.GiaoViens.Update(gv);
             _context.SaveChanges();
             return NoContent();
         }
@@ -71,21 +79,14 @@ namespace Onjob.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
-            var mh = _context.MonHocs.Find(id);
+            var mh = _context.GiaoViens.Find(id);
             if (mh == null)
             {
                 return NotFound();
             }
-            _context.MonHocs.Remove(mh);
+            _context.GiaoViens.Remove(mh);
             _context.SaveChanges();
             return NoContent();
         }
-
-        //GET api/search
-        [HttpGet("search/{searchTest}", Name = "Search")]
-        public ActionResult<List<MonHoc>> Search(string searchText)
-        {
-            return _context.MonHocs.Where(x => x.Ten.Contains(searchText)).ToList();
-        }*/
     }
 }
