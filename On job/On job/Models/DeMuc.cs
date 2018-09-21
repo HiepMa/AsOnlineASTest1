@@ -19,15 +19,12 @@ namespace Onjob.Models
 
         [Column("Ma_DeMuc")]
         public string Ma
-        { get { return Ma; }
-            set { if (Ma.Length > 30) Ma = Ma.Substring(0, 29); }
+        { get;set;
         }
 
         [Column("Ten_DeMuc")]
         public string Ten
-        {
-            get { return Ten; }
-            set { if (Ten.Length > 100) Ten = Ten.Substring(0, 99); }
+        {get;set;
         }
 
         [Column("HT_DeMuc")]
@@ -35,8 +32,7 @@ namespace Onjob.Models
 
         [Column("NguoiTao_DM")]
         public string NguoiTao {
-            get { return NguoiTao; }
-            set {if(NguoiTao.Length>250) NguoiTao=NguoiTao.Substring(0,249); }
+            get;set;
         }
 
         [Column("NgayTao_DM")]
@@ -44,8 +40,7 @@ namespace Onjob.Models
 
         [Column("NguoiCN_DM")]
         public string NguoiCN {
-            get { return NguoiCN; }
-            set { if (NguoiCN.Length > 250) NguoiCN = NguoiCN.Substring(0, 249); }
+            get;set;
         }
 
         [Column("NgayCN_DM")]
@@ -54,8 +49,7 @@ namespace Onjob.Models
         [Column("Khac_DeMuc")]
         public string Khac
         {
-            get { return Khac; }
-            set { if (Khac.Length > 250) Khac = Khac.Substring(0, 249); }
+            get;set;
         }
         [ForeignKey("ID_MonHoc")]
         public virtual MonHoc MonHoc { get; set; }
