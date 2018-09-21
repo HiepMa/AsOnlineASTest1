@@ -12,7 +12,7 @@ namespace Onjob.Models
     {
         [Key]
         [Column("ID_GV")]
-        public long ID_GV { get; set; }
+        public long ID { get; set; }
 
         [Column("MADN_GV")]
         public string Ma {
