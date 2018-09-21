@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Onjob.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Onjob.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController1 : Controller
+    [ApiController]
+    public class DeMucController : ControllerBase
     {
+        private readonly OnJobContext _context;
+        public DeMucController 
         // GET: api/<controller>
         [HttpGet]
         public IEnumerable<string> Get()
