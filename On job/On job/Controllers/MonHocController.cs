@@ -42,6 +42,12 @@ namespace Onjob.Controllers
         [HttpPost]
         public IActionResult Create(MonHoc monHoc)
         {
+            string a = DateTime.Now.ToString("yyyyMMddhh:mm:ss");
+            string fag = a.Replace(" ", "");
+            string b = a.Replace("/", "");
+            string c = b.Replace(":", "");
+            long kq = long.Parse(c);
+            monHoc.ID = kq;
             monHoc.NgayTao = DateTime.Now;
             monHoc.NgayCN = monHoc.NgayTao;
             monHoc.NguoiCN = monHoc.NguoiTao;
