@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Onjob.Models;
 using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
@@ -22,14 +23,19 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<DeMuc>> Get()
         {
-            return _context.DeMucs.ToList();
+            return _context.DeMucs.Include(x => x.MonHoc).ToList();
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<DeMuc> Get(long id)
         {
-            return "value";
+            var dm = _context.DeMucs.Find(id);
+            if (dm == null)
+            {
+                return NoContent();
+            }
+            return dm;
         }
 
         // POST api/<controller>
