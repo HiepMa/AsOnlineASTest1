@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Onjob.Models;
+using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,12 +15,14 @@ namespace Onjob.Controllers
     public class DeMucController : ControllerBase
     {
         private readonly OnJobContext _context;
-        public DeMucController 
+        public DeMucController(OnJobContext context) {
+            _context = context;
+        }
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<List<DeMuc>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _context.DeMucs.ToList();
         }
 
         // GET api/<controller>/5
