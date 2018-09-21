@@ -46,7 +46,7 @@ namespace Onjob.Controllers
             giaoVien.NgayCN = giaoVien.NgayTao;
             _context.GiaoViens.Add(giaoVien);
             _context.SaveChanges();
-            return CreatedAtRoute("Get", new { id = giaoVien.ID_GV }, giaoVien);
+            return CreatedAtRoute("Get", new { id = giaoVien.ID }, giaoVien);
         }
 
         // PUT api/<controller>/5
