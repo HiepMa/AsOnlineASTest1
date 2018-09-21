@@ -12,18 +12,17 @@ namespace Onjob.Models
     {
         [Key]
         [Column("ID_LoaiCH")]
-        public long ID_LoaiCH { get; set; }
+        public long ID{ get; set; }
 
         [Column("MaLoai_CH")]
         public string MaLoai {
-            get { return MaLoai; }
-            set { if (MaLoai.Length > 250) MaLoai.Remove(250); }
+            get;set;
         }
 
         [Column("TenLoai_CH")]
         public string TenLoai
-        {   get { return TenLoai; }
-            set { if (TenLoai.Length > 250) TenLoai = TenLoai.Substring(0, 249); }
+        {
+            get; set;
         }
 
         [Column("HT_Loai")]
@@ -32,8 +31,7 @@ namespace Onjob.Models
         [Column("Khac_LCH")]
         public string Khac
         {
-            get { return Khac; }
-            set { if (Khac.Length > 250) Khac.Remove(250); }
+            get; set;
         }
     }
 }
