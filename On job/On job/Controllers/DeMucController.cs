@@ -40,8 +40,14 @@ namespace Onjob.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult create(DeMuc deMuc)
         {
+            deMuc.NgayTao = DateTime.Now;
+            deMuc.NguoiCN = deMuc.NguoiTao;
+            deMuc.NgayCN = deMuc.NgayTao;
+            _context.DeMucs.Add(deMuc);
+            _context.SaveChanges();
+            return CreatedAtRoute("Get", new { id = deMuc.ID }, deMuc);
         }
 
         // PUT api/<controller>/5
