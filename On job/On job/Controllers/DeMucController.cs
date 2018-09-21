@@ -52,14 +52,36 @@ namespace Onjob.Controllers
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult update(long id, DeMuc deMuc)
         {
+            var dm = _context.DeMucs.Find(id);
+            if(dm == null)
+            {
+                return NoContent();
+            }
+            dm.Ma = deMuc.Ma;
+            dm.NgayCN = DateTime.Now;
+            dm.NguoiCN = deMuc.NguoiCN;
+            dm.Ten = deMuc.Ten;
+            dm.Khac = dm.Khac;
+
+            _context.DeMucs.Update(dm);
+            _context.SaveChanges();
+            return NoContent();
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(long id)
         {
+            var dm = _context.DeMucs.Find(id);
+            if (dm == null)
+            {
+                return NotFound();
+            }
+            _context.DeMucs.Remove(dm);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
