@@ -42,6 +42,12 @@ namespace Onjob.Controllers
         [HttpPost]
         public IActionResult create(DeMuc deMuc)
         {
+            string a = DateTime.Now.ToString("yyyyMMddhh:mm:ss");
+            string fag = a.Replace(" ", "");
+            string b = a.Replace("/", "");
+            string c = b.Replace(":", "");
+            long kq = long.Parse(c);
+            deMuc.ID = kq;
             deMuc.NgayTao = DateTime.Now;
             deMuc.NguoiCN = deMuc.NguoiTao;
             deMuc.NgayCN = deMuc.NgayTao;

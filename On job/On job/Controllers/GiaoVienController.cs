@@ -41,6 +41,12 @@ namespace Onjob.Controllers
         [HttpPost]
         public IActionResult Create(GiaoVien giaoVien)
         {
+            string a = DateTime.Now.ToString("yyyyMMddhh:mm:ss");
+            string fag = a.Replace(" ", "");
+            string b = a.Replace("/", "");
+            string c = b.Replace(":", "");
+            long kq = long.Parse(c);
+            giaoVien.ID = kq;
             giaoVien.NgayTao = DateTime.Now;
             giaoVien.NguoiCN = giaoVien.NguoiTao;
             giaoVien.NgayCN = giaoVien.NgayTao;
