@@ -47,7 +47,7 @@ namespace Onjob.Controllers
             string b = a.Replace("/", "");
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
-            monHoc.ID = kq;
+            monHoc.ID= kq;
             monHoc.NgayTao = DateTime.Now;
             monHoc.NgayCN = monHoc.NgayTao;
             monHoc.NguoiCN = monHoc.NguoiTao;
