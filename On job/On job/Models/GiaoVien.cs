@@ -14,6 +14,9 @@ namespace Onjob.Models
         [Column("ID_GV")]
         public long ID { get; set; }
 
+        [Column("ID_CQ")]
+        public long Id_Cq { get; set; }
+
         [Column("MADN_GV")]
         public string Ma {
             get;set;

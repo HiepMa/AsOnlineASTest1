@@ -29,7 +29,7 @@ namespace Onjob.Models
         public DbSet<MonHoc> MonHocs { get; set; }
         public DbSet<PhanQuyen> PhanQuyens { get; set; }
         public DbSet<ThiSinh> ThiSinhs { get; set; }
-
+        public DbSet<CumQuyen> CumQuyens { get; set; }
 
     }
 }
