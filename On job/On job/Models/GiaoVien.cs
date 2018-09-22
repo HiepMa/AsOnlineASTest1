@@ -91,5 +91,8 @@ namespace Onjob.Models
         public string Khac_GV {
             get; set;
         }
+
+        [ForeignKey("Id_Cq")]
+        public virtual CumQuyen CumQuyen { get; set; }
     }
 }

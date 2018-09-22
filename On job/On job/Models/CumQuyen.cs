@@ -25,10 +25,10 @@ namespace Onjob.Models
         public DateTime NgayTao { get; set; }
         [Column("NguoiTaoCQ")]
         public string NguoiTao { get; set; }
-        [Column("NguoiCNCQ")]
-        public string NguoiCN { get; set; }
         [Column("NgayCNCQ")]
         public DateTime NgayCN { get; set; }
+        [Column("NguoiCNCQ")]
+        public string NguoiCN { get; set; }
         [Column("KhacCQ")]
         public string Khac { get; set; }
     }

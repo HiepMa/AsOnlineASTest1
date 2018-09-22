@@ -17,11 +17,23 @@ namespace Onjob.Models
         [Column("ID_ManHinh")]
         public long ID_ManHinh { get; set; }
 
-        [Column("ID_GV")]
-        public long ID_GV { get; set; }
+        [Column("ID_CQ")]
+        public long ID_CQ { get; set; }
 
         [Column("CoQuyen")]
         public bool CoQuyen { get; set; }
+
+        [Column("ChiDoc")]
+        public bool read { get; set; }
+
+        [Column("Them")]
+        public bool add { get; set; }
+
+        [Column("Sua")]
+        public bool edit { get; set; }
+
+        [Column("Xoa")]
+        public bool delete { get; set; }
 
         [Column("HT_PQ")]
         public bool HienThi { get; set; }
@@ -37,10 +49,7 @@ namespace Onjob.Models
 
         [Column("NguoiTao_PQ")]
         public string NguoiTao {
-            get { return NguoiTao; }
-            set {
-                NguoiTao = value;
-                if (NguoiTao.Length > 250) NguoiTao.Remove(250); }
+            get;set;
         }
 
         [Column("NgayTao_PQ")]
@@ -49,10 +58,7 @@ namespace Onjob.Models
         [Column("NguoiCN_PQ")]
         public string NguoiCN
         {
-            get { return NguoiCN; }
-            set { NguoiCN = value;
-                if (NguoiCN.Length > 250) NguoiCN.Remove(250);
-            }
+            get;set;
         }
 
         [Column("NgayCN_PQ")]
@@ -61,14 +67,11 @@ namespace Onjob.Models
         [Column("Khac_PQ")]
         public string Khac
         {
-            get { return Khac; }
-            set { if (Khac.Length > 250) Khac.Remove(250); }
+            get;set;
         }
 
         [ForeignKey("ID_ManHinh")]
         public virtual ManHinh ManHinh { get; set; }
 
-        [ForeignKey("ID_GV")]
-        public virtual GiaoVien GiaoVien { get; set; }
     }
 }
