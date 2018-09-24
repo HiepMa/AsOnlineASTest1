@@ -51,6 +51,11 @@ namespace Onjob.Controllers
             monHoc.NgayTao = DateTime.Now;
             monHoc.NgayCN = monHoc.NgayTao;
             monHoc.NguoiCN = monHoc.NguoiTao;
+            //Kiem tra du lieu dau vao
+            if (monHoc.Ma.Length > 30) monHoc.Ma = monHoc.Ma.Remove(30);
+            if (monHoc.Ten.Length > 100) monHoc.Ten = monHoc.Ten.Remove(100);
+            if (monHoc.Khac.Length > 250) monHoc.Khac = monHoc.Khac.Remove(250);
+
             _context.MonHocs.Add(monHoc);
             _context.SaveChanges();
             return CreatedAtRoute("Get", new { id = monHoc.ID }, monHoc);
