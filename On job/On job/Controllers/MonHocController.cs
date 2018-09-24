@@ -76,7 +76,10 @@ namespace Onjob.Controllers
             mh.NgayCN = DateTime.Now;
             mh.NguoiCN = monHoc.NguoiCN;
             mh.Khac = monHoc.Khac;
-
+            //Kiem tra du lieu dau vao
+            if (monHoc.Ma.Length > 30) monHoc.Ma = monHoc.Ma.Remove(30);
+            if (monHoc.Ten.Length > 100) monHoc.Ten = monHoc.Ten.Remove(100);
+            if (monHoc.Khac.Length > 250) monHoc.Khac = monHoc.Khac.Remove(250);
             _context.MonHocs.Update(mh);
             _context.SaveChanges();
             return NoContent();
