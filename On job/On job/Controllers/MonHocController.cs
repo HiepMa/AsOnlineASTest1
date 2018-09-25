@@ -40,7 +40,7 @@ namespace Onjob.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public IActionResult Create(MonHoc monHoc)
+        public ActionResult<MonHoc> Create(MonHoc monHoc)
         {
             string a = DateTime.Now.ToString("yyyyMMddhh:mm:ss");
             string fag = a.Replace(" ", "");
@@ -58,7 +58,7 @@ namespace Onjob.Controllers
 
             _context.MonHocs.Add(monHoc);
             _context.SaveChanges();
-            return CreatedAtRoute("Get", new { id = monHoc.ID }, monHoc);
+            return monHoc;
         }
 
         // PUT api/<controller>/5
