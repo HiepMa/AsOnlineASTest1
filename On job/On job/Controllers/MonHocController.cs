@@ -21,9 +21,9 @@ namespace Onjob.Controllers
         }
         // GET: api/MonHoc
         [HttpGet]
-        public ActionResult<List<MonHoc>> Get()
+        public ActionResult<List<MonHoc>> Get(bool dk)
         {
-            return _context.MonHocs.Where(x=> x.HienThi==true).ToList();
+            return _context.MonHocs.Where(x=>x.HienThi==true).ToList();
         }
 
         // GET api/<controller>/5
