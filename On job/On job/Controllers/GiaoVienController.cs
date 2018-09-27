@@ -23,7 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<GiaoVien>> Get()
         {
-            return _context.GiaoViens.Include(x=>x.CumQuyen).ToList();
+            return _context.GiaoViens.Where(x=>x.HienThi==true).Include(x=>x.CumQuyen).ToList();
         }
 
         // GET api/<controller>/5
@@ -86,12 +86,13 @@ namespace Onjob.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
-            var mh = _context.GiaoViens.Find(id);
-            if (mh == null)
+            var gv = _context.GiaoViens.Find(id);
+            if (gv == null)
             {
                 return NotFound();
             }
-            _context.GiaoViens.Remove(mh);
+            gv.HienThi = false;
+            _context.GiaoViens.Update(gv);
             _context.SaveChanges();
             return NoContent();
         }

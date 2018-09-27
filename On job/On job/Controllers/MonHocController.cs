@@ -23,7 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<MonHoc>> Get()
         {
-            return _context.MonHocs.ToList();
+            return _context.MonHocs.Where(x=> x.HienThi==true).ToList();
         }
 
         // GET api/<controller>/5
@@ -94,7 +94,8 @@ namespace Onjob.Controllers
             {
                 return NotFound();
             }
-            _context.MonHocs.Remove(mh);
+            mh.HienThi = false;
+            _context.MonHocs.Update(mh);
             _context.SaveChanges();
             return NoContent();
         }

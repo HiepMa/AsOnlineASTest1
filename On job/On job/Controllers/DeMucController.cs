@@ -23,7 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<DeMuc>> Get()
         {
-            return _context.DeMucs.Include(x => x.MonHoc).ToList();
+            return _context.DeMucs.Where(x=>x.HienThi==true).Include(x => x.MonHoc).ToList();
         }
 
         // GET api/<controller>/5
@@ -86,7 +86,8 @@ namespace Onjob.Controllers
             {
                 return NotFound();
             }
-            _context.DeMucs.Remove(dm);
+            dm.HienThi = false;
+            _context.DeMucs.Update(dm);
             _context.SaveChanges();
             return NoContent();
         }

@@ -22,7 +22,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<Loai_CH>> Get()
         {
-            return _context.Loai_CHes.ToList();
+            return _context.Loai_CHes.Where(x=>x.HienThi==true).ToList();
         }
 
         // GET api/<controller>/5
@@ -77,7 +77,8 @@ namespace Onjob.Controllers
             {
                 return NotFound();
             }
-            _context.Loai_CHes.Remove(loai);
+            loai.HienThi = false;
+            _context.Loai_CHes.Update(loai);
             _context.SaveChanges();
             return NoContent();
         }
