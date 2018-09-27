@@ -24,14 +24,7 @@ namespace Onjob.Models
         public string NoiDung { get; set; }
             
         [Column ("CapDo")]
-        public int CapDo {
-            get { return CapDo; }
-            set {
-                CapDo = value;
-                if (CapDo > 9) CapDo = 9;
-                if (CapDo < 1) CapDo = 1;
-            }
-        }
+        public int CapDo { get; set; }
 
         [Column("TrangThaiTron_CauHoi")]
         public bool TrThaiTron { get; set; }
@@ -40,53 +33,22 @@ namespace Onjob.Models
         public bool HienThi { get; set; }
 
         [Column("Diem_CauHoi")]
-        public double Diem {
-            get {return Diem; }
-            set
-            {
-                Diem = value;
-                if (Diem > 0.5) Diem = 0.5;
-                if (Diem < 0.1) Diem = 0.1;
-            }
-            }
+        public double Diem { get; set; }
 
         [Column("NguoiTao_CauHoi")]
-        public string NguoiTao
-        {
-            get { return NguoiTao; }
-            set {
-                NguoiTao = value;
-                if (NguoiTao.Length >= 250) NguoiTao = "NULL";//Chuoi dai hon do dai quy dinh
-            }
-        }
+        public string NguoiTao { get; set; }
 
         [Column("NgayTao_CauHoi")]
-        public DateTime NgayTao {
-            get { return NgayTao; }
-            set { NgayTao=DateTime.Now; }
-        }
+        public DateTime NgayTao { get; set; }
 
         [Column("NguoiCN_CauHoi")]
-        public string NguoiCN  {
-            get { return NguoiCN; }
-            set
-            {
-                NguoiCN = value;
-                if (NguoiCN.Length >= 250) NguoiCN = "NULL";//Chuoi dai hon do dai quy dinh
-            }
-        }
+        public string NguoiCN { get; set; }
 
         [Column("NgayCN_CauHoi")]
         public DateTime NgayCN { get; set; }
 
         [Column("Khac_CH")]
-        public string Khac
-        {
-            get { return Khac; }
-            set { Khac = value;
-                if (Khac.Length >= 250) Khac = "NULL";//Chuoi dai hon do dai quy dinh
-            }
-        }
+        public string Khac { get; set; }
 
         [ForeignKey("ID_LoaiCH")]
         public virtual Loai_CH Loai_CH { get; set; }

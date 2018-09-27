@@ -40,7 +40,7 @@ namespace Onjob.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public IActionResult create(DeMuc deMuc)
+        public ActionResult<DeMuc> create(DeMuc deMuc)
         {
             string a = DateTime.Now.ToString("yyyyMMddhh:mm:ss");
             string fag = a.Replace(" ", "");
@@ -53,7 +53,7 @@ namespace Onjob.Controllers
             deMuc.NgayCN = deMuc.NgayTao;
             _context.DeMucs.Add(deMuc);
             _context.SaveChanges();
-            return CreatedAtRoute("Get", new { id = deMuc.ID }, deMuc);
+            return deMuc;
         }
 
         // PUT api/<controller>/5
@@ -65,6 +65,7 @@ namespace Onjob.Controllers
             {
                 return NoContent();
             }
+            dm.ID_MonHoc = deMuc.ID_MonHoc;
             dm.Ma = deMuc.Ma;
             dm.NgayCN = DateTime.Now;
             dm.NguoiCN = deMuc.NguoiCN;
