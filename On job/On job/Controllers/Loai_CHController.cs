@@ -61,10 +61,7 @@ namespace Onjob.Controllers
             {
                 return NoContent();
             }
-            loai.HienThi = loai_CH.HienThi;
-            loai.MaLoai = loai_CH.MaLoai;
             loai.TenLoai = loai_CH.TenLoai;
-            loai.Khac = loai_CH.Khac;
 
             _context.Loai_CHes.Update(loai);
             _context.SaveChanges();
