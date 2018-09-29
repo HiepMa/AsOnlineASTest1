@@ -24,7 +24,7 @@ namespace Onjob.Controllers
         public ActionResult<List<DeMuc>> Get()
         {
             
-            return _context.DeMucs.Where(x => x.HienThi == true).Include(x => x.MonHoc).ToList();
+            return _context.DeMucs.Include(x => x.MonHoc).ToList();
         }
 
         // GET api/<controller>/5
