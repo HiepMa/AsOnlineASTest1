@@ -23,7 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<GiaoVien>> Get()
         {
-            return _context.GiaoViens.Include(x=>x.CumQuyen).ToList();
+            return _context.GiaoViens.Where(x=>x.Xoa==false).Include(x=>x.CumQuyen).ToList();
         }
 
         // GET api/<controller>/5
@@ -48,6 +48,8 @@ namespace Onjob.Controllers
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
             giaoVien.ID = kq;
+            giaoVien.HienThi = true;
+            giaoVien.Xoa = false;
             giaoVien.NgayTao = DateTime.Now;
             giaoVien.NguoiCN = giaoVien.NguoiTao;
             giaoVien.NgayCN = giaoVien.NgayTao;
@@ -91,7 +93,7 @@ namespace Onjob.Controllers
             {
                 return NotFound();
             }
-            gv.HienThi = false;
+            gv.Xoa = true;
             _context.GiaoViens.Update(gv);
             _context.SaveChanges();
             return NoContent();

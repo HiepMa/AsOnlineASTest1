@@ -21,46 +21,25 @@ namespace Onjob.Models
         public long ID_DANGKY { get; set; }
 
         [Column("Ma_BaiThi")]
-        public string Ma
-        {
-            get { return Ma; }
-            set {
-                Ma = value;
-                if (Ma.Length > 350)
-                    Ma.Remove(350) ;//Chuoi dai hon 250 ki tu
-            }
-        }
+        public string Ma { get; set; }
         
         [Column("ThoiGianConLai_BaiThi")]
-        public int TgConLai
-        {
-            get { return TgConLai; }
-            set { if (TgConLai <= 0) TgConLai = 0; }
-        }
+        public int TgConLai { get; set; }
 
         [Column("NgayThi")]
         public DateTime NgayThi { get; set; }
 
         [Column("Khac_BaiThi")]
-        public string Khac
-        {
-            get { return Khac; }
-            set {
-                Khac = value;
-                if (Khac.Length >= 250)
-                    Khac.Remove(250); //Chuoi dai hon 250 ki tu
-            }
-        }
+        public string Khac { get; set; }
 
         [Column("HT_BaiThi")]
         public bool HienThi { get; set; }
 
         [Column("ThuTu_CauHoi")]
-        public string ThuTuCH
-        {
-            get { return ThuTuCH; }
-            set { if (ThuTuCH.Length > 250) ThuTuCH.Remove(250); }
-        }
+        public string ThuTuCH { get; set; }
+        
+        [Column("Xoa_BaiThi")]
+        public bool Xoa { get; set; }
 
         [ForeignKey("ID_DETHI")]
         public virtual List<DanhSach_DeThi> Ds_DeThi { get; set; }

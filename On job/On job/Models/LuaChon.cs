@@ -12,10 +12,13 @@ namespace Onjob.Models
     {
         [Key]
         [Column("ID_LUACHON")]
-        public long ID_LUACHON { set; get; }
+        public long ID { set; get; }
 
         [Column("ID_CH")]
         public long ID_CH { get; set; }
+
+        [Column("MaLuaChon")]
+        public string Ma { get; set; }
 
         [Column("NoiDung_LuaChon")]
         public string NoiDung { get; set; }
@@ -26,40 +29,23 @@ namespace Onjob.Models
         [Column("HT_LuaChon")]
         public bool HienThi { get; set; }
 
+        [Column("Xoa_LuaChon")]
+        public bool Xoa { get; set; }
+
         [Column("NguoiTao_LuaChon")]
-        public string NguoiTao
-        {
-            get { return NguoiTao; }
-            set {
-                NguoiTao = value;
-                if (NguoiTao.Length > 250) NguoiTao.Remove(250); }
-        }
+        public string NguoiTao { get; set; }
 
         [Column("NgayTao_LuaChon")]
         public DateTime NgayTao { get; set; }
 
         [Column("NguoiCN_LuaChon")]
-        public string NguoiCN
-        {
-            get { return NguoiCN; }
-            set {
-                NguoiCN = value;
-                if (NguoiCN.Length > 250) NguoiCN.Remove(250); }
-        }
+        public string NguoiCN { get; set; }
 
         [Column("NgayCN_LuaChon")]
         public DateTime NgayCN { get; set; }
 
         [Column("Khac_LuaChon")]
-        public string Khac
-        {
-            get { return Khac; }
-            set
-            {
-                Khac = value;
-                if (Khac.Length > 250) Khac.Remove(250);
-            }
-        }
+        public string Khac { get; set; }
 
         [ForeignKey("ID_CH")]
         public virtual CauHoi CauHoi { get; set; }

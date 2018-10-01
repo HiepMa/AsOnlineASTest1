@@ -21,46 +21,20 @@ namespace Onjob.Models
         public long ID_CauHoi { get; set; }
 
         [Column("ThiSinh_LuaChon")]
-        public string LuaChon
-        {
-            get { return LuaChon; }
-            set {
-                LuaChon = value;
-                if (LuaChon.Length >= 350) LuaChon = "NULL";
-            }
-        }
+        public string LuaChon { get; set; }
 
         [Column("HT_ChiTiet_BaiThi")]
         public bool HienThi { get; set; }
 
-        [Column("Diem_BaiThi")]
-        public double Diem
-        {
-            get { return Diem; }
-            set
-            {
-                Diem = value;
-                if (Diem > 0.5) Diem = 0.5;
-                if (Diem < 0.1) Diem = 0.1;
-            }
-        }
-        
-        [Column("Khac_CTBT")]
-        public string Khac
-        {
-            get { return Khac; }
-            set {
-                Khac = value;
-                if (Khac.Length > 250) Khac.Remove(250);
-            }
-        }
-        [Column("ThuTu_LuaChon")]
-        public string ThuTuLC
-        {
-            get { return ThuTuLC; }
-            set { if (ThuTuLC.Length > 250) ThuTuLC.Remove(250); }
-        }
+        [Column("Xoa_CTBT")]
+        public bool Xoa { get; set; }
 
+        [Column("Diem_BaiThi")]
+        public double Diem { get; set; }
+        [Column("Khac_CTBT")]
+        public string Khac { get; set; }
+        [Column("ThuTu_LuaChon")]
+        public string ThuTuLC { get; set; }
         [Column("TT_TraLoi")]
         public bool ThuTuTL { get; set; }
 

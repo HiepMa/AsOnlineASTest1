@@ -18,11 +18,7 @@ namespace Onjob.Models
         public long ID_CH { get; set; }
 
         [Column("MoTa_HanhDong")]
-        public string MoTa
-        {
-            get { return MoTa; }
-            set { if (MoTa.Length > 10) MoTa.Remove(10); }
-        }
+        public string MoTa { get; set; }
 
         [Column("NoiDungCN_LS_CH")]
         public string NoiDungCN { get; set; }
@@ -46,21 +42,18 @@ namespace Onjob.Models
         public int CapDo_Moi { get; set; }
 
         [Column("NguoiCN_LS_CH")]
-        public string NguoiCN
-        {
-            get { return NguoiCN; }
-            set { if (NguoiCN.Length > 250) NguoiCN.Remove(250); }
-        }
-
+        public string NguoiCN { get; set; }
         [Column("NgayCN_LS_CH")]
         public DateTime NgayCN_LS_CH { get; set; }
 
         [Column("Khac_LS_CH")]
-        public string Khac
-        {
-            get { return Khac; }
-            set { if (Khac.Length > 250) Khac.Remove(250); }
-        }
+        public string Khac { get; set; }
+
+        [Column("HT_LS_CH")]
+        public bool HienThi { get; set; }
+
+        [Column("Xoa_LS_CH")]
+        public bool Xoa { get; set; }
 
         [ForeignKey("ID_CH")]
         public virtual CauHoi CauHoi { get; set; }

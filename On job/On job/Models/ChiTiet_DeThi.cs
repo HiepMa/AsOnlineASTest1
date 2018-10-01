@@ -30,35 +30,23 @@ namespace Onjob.Models
         [Column("HT_ChiTiet_DT")]
         public bool HienThi { get; set; }
 
+        [Column("Xoa_CTDT")]
+        public bool Xoa { get; set; }
+
         [Column("NguoiTao_CTDT")]
-        public string NguoiTao
-        {
-            get { return NguoiTao; }
-            set { if (NguoiTao.Length > 250) NguoiTao.Remove(250); }
-        }
+        public string NguoiTao { get; set; }
 
         [Column("NgayTao_CTDT")]
         public DateTime NgayTao { get; set; }
 
         [Column("NguoiCN_CTDT")]
-        public string NguoiCN
-        {
-            get { return NguoiCN; }
-            set { if (NguoiCN.Length > 250) NguoiCN.Remove(250); }
-        }
+        public string NguoiCN { get; set; }
 
         [Column("NgayCN_CTDT")]
         public DateTime NgayCN { get; set; }
 
         [Column("Khac_ChiTiet_DeThi")]
-        public string Khac
-        {
-            get { return Khac; }
-            set {
-                Khac = value;
-                if (Khac.Length > 250) Khac.Remove(250);
-            }
-        }
+        public string Khac { get; set; }
 
         [ForeignKey("ID_DE")]
         public virtual DanhSach_DeThi DsDeThi { get; set; }

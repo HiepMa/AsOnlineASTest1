@@ -18,20 +18,10 @@ namespace Onjob.Models
         public long ID_MonHoc { get; set; }
         
         [Column("Ma_DeThi")]
-        public string Ma {
-            get {return Ma; }
-            set {Ma =value ;
-                if (Ma.Length > 30) Ma = "NULL";
-            }
-        }
+        public string Ma { get; set; }
         
         [Column("Ten_DeThi")]
-        public string Ten {
-            get {return Ten; }
-            set {
-                Ten = value;
-                if (Ten.Length> 50) Ten="NULL"; }
-        }
+        public string Ten { get; set; }
 
         [Column("TrangThai_DeThi")]
         public bool TrangThai_DeThi { get; set; }
@@ -41,14 +31,11 @@ namespace Onjob.Models
 
         [Column("HT_DeThi")]
         public bool HienThi { get; set; }
+        [Column("Xoa_DeThi")]
+        public bool Xoa { get; set; }
 
         [Column("ThoiGianLamBai")]
-        public int ThoiGianLamBai
-        {
-            get { return ThoiGianLamBai; }
-            set { ThoiGianLamBai = value;
-                if (ThoiGianLamBai <= 0) ThoiGianLamBai = 0; }
-        }
+        public int ThoiGianLamBai { get; set; }
 
         [Column("NgayBatDau_SuDung")]
         public DateTime DayStart { get; set; }
@@ -60,28 +47,16 @@ namespace Onjob.Models
         public DateTime DayFinal { get; set; }
 
         [Column("Khac_DeThi")]
-        public string Khac
-        {
-            get { return Khac; }
-            set { if (Khac.Length > 300) Khac = "NULL"; }
-        }
+        public string Khac { get; set; }
 
         [Column("NguoiTao_DeThi")]
-        public string NguoiTao
-        {
-            get { return NguoiTao; }
-            set { if (NguoiTao.Length > 250) NguoiTao = "NULL"; }
-        }
+        public string NguoiTao { get; set; }
 
         [Column("NgayTao_DeThi")]
         public DateTime NgayTao { get; set; }
 
         [Column("NguoiCN_CauHoi")]
-        public string NguoiCN
-        {
-            get { return NguoiCN; }
-            set { if (NguoiCN.Length > 250) NguoiCN = "NULL"; }
-        }
+        public string NguoiCN { get; set; }
 
         [Column("NgayCN_CauHoi")]
         public DateTime NgayCN_CauHoi { get; set; }

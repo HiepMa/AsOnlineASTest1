@@ -21,6 +21,8 @@ namespace Onjob.Models
         public string Mota { get; set; }
         [Column("HT_CQ")]
         public bool HienThi { get; set; }
+        [Column("Xoa_CQ")]
+        public bool Xoa { get; set; }
         [Column("NgayTaoCQ")]
         public DateTime NgayTao { get; set; }
         [Column("NguoiTaoCQ")]

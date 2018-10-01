@@ -32,6 +32,9 @@ namespace Onjob.Models
         [Column("HT_CauHoi")]
         public bool HienThi { get; set; }
 
+        [Column("Xoa_CauHoi")]
+        public bool Xoa { get; set; }
+
         [Column("Diem_CauHoi")]
         public double Diem { get; set; }
 

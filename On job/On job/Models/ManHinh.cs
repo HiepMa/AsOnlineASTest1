@@ -15,41 +15,24 @@ namespace Onjob.Models
         public long ID { get; set; }
 
         [Column("MaManHinh")]
-        public string Ma
-        {
-            get { return Ma; }
-            set {
-                Ma = value;
-                if (Ma.Length > 250) Ma.Remove(250); }
-        }
+        public string Ma { get; set; }
 
         [Column("TenManHinh")]
-        public string Ten
-        {
-            get { return Ten; }
-            set {
-                Ten = value;
-                if (Ten.Length > 100) Ten.Remove(100); }
-        }
+        public string Ten { get; set; }
 
         [Column("HT_ManHinh")]
         public bool HienThi { get; set; }
+
+        [Column("Xoa_ManHinh")]
+        public bool Xoa { get; set; }
 
         [Column("MoTaManHinh")]
         public string MoTa { get; set; }
 
         [Column("URL")]
-        public string URL
-        {
-            get { return URL; }
-            set { if (URL.Length > 300) URL = "NULL"; }
-        }
-
+        public string URL { get; set; }
         [Column("Khac_ManHinh")]
-        public string Khac
-        {
-            get { return Khac; }
-            set { if (Khac.Length > 250) Khac.Remove(250); }
-        }
+        public string Khac { get; set; }
+
     }
-}
+    }

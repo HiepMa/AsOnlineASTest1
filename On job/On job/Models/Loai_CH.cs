@@ -28,6 +28,9 @@ namespace Onjob.Models
         [Column("HT_Loai")]
         public bool HienThi { get; set; }
 
+        [Column("Xoa_LCH")]
+        public bool Xoa { get; set; }
+
         [Column("Khac_LCH")]
         public string Khac
         {

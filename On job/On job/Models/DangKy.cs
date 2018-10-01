@@ -17,20 +17,23 @@ namespace Onjob.Models
         [Column("ID_TK")]
         public long ID_TK { get; set; }
 
-        [Column("iID_MONHOC")]
+        [Column("ID_MONHOC")]
         public long ID_MONHOC { get; set; }
 
         [Column("Ngay_DangKy")]
         public DateTime Day { get; set; }
 
+        [Column("HT_DangKy")]
+        public bool HienThi { get; set; }
+
+        [Column("Xoa_DangKy")]
+        public bool Xoa { get; set; }
+
         [Column("CamThi")]
         public bool CamThi { get; set; }
 
         [Column("NGUOICN_DK")]
-        public string NguoiCN {
-            get { return NguoiCN; }
-            set { if (NguoiCN.Length > 250) NguoiCN = NguoiCN.Substring(0, 249); }
-            } 
+        public string NguoiCN { get; set; }
 
         [Column("NgayCN_DangKy")]
         public DateTime NgayCN { get; set; }

@@ -23,7 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<MonHoc>> Get(bool dk)
         {
-            return _context.MonHocs.ToList();
+            return _context.MonHocs.Where(x=>x.Xoa==false).ToList();
         }
 
         // GET api/<controller>/5
@@ -48,6 +48,8 @@ namespace Onjob.Controllers
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
             monHoc.ID= kq;
+            monHoc.Xoa = false;
+            monHoc.HienThi = true;
             monHoc.NgayTao = DateTime.Now;
             monHoc.NgayCN = monHoc.NgayTao;
             monHoc.NguoiCN = monHoc.NguoiTao;
@@ -94,7 +96,7 @@ namespace Onjob.Controllers
             {
                 return NotFound();
             }
-            mh.HienThi = false;
+            mh.Xoa = true;
             _context.MonHocs.Update(mh);
             _context.SaveChanges();
             return NoContent();

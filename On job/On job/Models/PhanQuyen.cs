@@ -37,6 +37,8 @@ namespace Onjob.Models
 
         [Column("HT_PQ")]
         public bool HienThi { get; set; }
+        [Column("Xoa_PQ")]
+        public bool Xoa { get; set; }
 
         [Column("NgayBD_PQ")]
         public DateTime NgayBD { get; set; }
@@ -72,6 +74,8 @@ namespace Onjob.Models
 
         [ForeignKey("ID_ManHinh")]
         public virtual ManHinh ManHinh { get; set; }
+        [ForeignKey("ID_CQ")]
+        public virtual CumQuyen CumQuyen { get; set; }
 
     }
 }

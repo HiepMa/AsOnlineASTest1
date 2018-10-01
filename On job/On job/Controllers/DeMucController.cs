@@ -24,7 +24,7 @@ namespace Onjob.Controllers
         public ActionResult<List<DeMuc>> Get()
         {
             
-            return _context.DeMucs.Include(x => x.MonHoc).ToList();
+            return _context.DeMucs.Where(x=>x.Xoa==false).Include(x => x.MonHoc).ToList();
         }
 
         // GET api/<controller>/5
@@ -49,6 +49,8 @@ namespace Onjob.Controllers
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
             deMuc.ID = kq;
+            deMuc.HienThi = true;
+            deMuc.Xoa = false;
             deMuc.NgayTao = DateTime.Now;
             deMuc.NguoiCN = deMuc.NguoiTao;
             deMuc.NgayCN = deMuc.NgayTao;
@@ -87,7 +89,7 @@ namespace Onjob.Controllers
             {
                 return NotFound();
             }
-            dm.HienThi = false;
+            dm.Xoa = true;
             _context.DeMucs.Update(dm);
             _context.SaveChanges();
             return NoContent();

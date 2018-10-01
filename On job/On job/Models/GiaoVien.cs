@@ -68,6 +68,9 @@ namespace Onjob.Models
         [Column("HT_GV")]
         public bool HienThi { get; set; }
 
+        [Column("Xoa_GV")]
+        public bool Xoa { get; set; }
+
         [Column("NguoiTao_GV")]
         public string NguoiTao
         {

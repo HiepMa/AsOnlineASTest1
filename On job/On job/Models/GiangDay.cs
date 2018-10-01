@@ -30,16 +30,19 @@ namespace Onjob.Models
         public DateTime DayFinal { get; set; }
 
         [Column("NguoiCN_GiangDay")]
-        public string NguoiCN
-        {
-            get { return NguoiCN; }
-            set { if (NguoiCN.Length > 250) NguoiCN = NguoiCN.Substring(0, 249); }
-        }
+        public string NguoiCN { get; set; }
 
         [Column("NgayCN_GiangDay")]
         public DateTime NgayCN { get; set; }
-        public string Khac_GiangDay { get; set; }
-        public bool HT_GiangDay { get; set; }
+
+        [Column("Khac_GiangDay")]
+        public string Khac{ get; set; }
+
+        [Column("HT_GiangDay")]
+        public bool HienThi { get; set; }
+
+        [Column("Xoa_GiangDay")]
+        public bool Xoa { get; set; }
 
         [ForeignKey("ID_GV")]
         public virtual GiaoVien GiaoVien { get; set; }

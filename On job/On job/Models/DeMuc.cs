@@ -30,6 +30,9 @@ namespace Onjob.Models
         [Column("HT_DeMuc")]
         public bool HienThi { get; set; }
 
+        [Column("Xoa_DeMuc")]
+        public bool Xoa { get; set; }
+
         [Column("NguoiTao_DM")]
         public string NguoiTao {
             get;set;

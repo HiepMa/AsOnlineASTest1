@@ -44,6 +44,9 @@ namespace Onjob.Models
         [Column("HT_ThiSinh")]
         public bool HienThi { get;set;}
 
+        [Column("Xoa_ThiSinh")]
+        public bool Xoa { get; set; }
+
         [Column("NguoiTao_ThiSinh")]
         public string NguoiTao { get; set; }
 
