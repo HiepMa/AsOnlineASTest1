@@ -13,6 +13,7 @@ namespace Onjob.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class DeMucController : ControllerBase
     {
         private readonly OnJobContext _context;

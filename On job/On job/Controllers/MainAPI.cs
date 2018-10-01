@@ -20,7 +20,6 @@ namespace Onjob.Controllers
     public class AuthController : ControllerBase
     {
         private readonly OnJobContext _context;
-        public LoginRespone userResult;
         public AuthController (OnJobContext context)
         {
             _context = context;
@@ -45,7 +44,7 @@ namespace Onjob.Controllers
                         signingCredentials: singingCredentials
                         );
                     var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
-                    userResult = new LoginRespone
+                    var userResult = new LoginRespone
                     {
                         Id = user.ID,
                         Id_Cq = user.Id_Cq,
@@ -54,14 +53,8 @@ namespace Onjob.Controllers
                     };
                     return Ok(userResult);
                 }
-                else return Ok("Đăng Nhập Thất Bại");
             }
             return Unauthorized();
-        }
-        [HttpGet]
-        public ActionResult<LoginRespone> Get()
-        {
-            return userResult;
         }
     }
 }
