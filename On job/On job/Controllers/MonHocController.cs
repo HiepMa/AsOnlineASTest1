@@ -23,7 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<MonHoc>> Get(bool dk)
         {
-            return _context.MonHocs.Where(x=>x.HienThi==true).ToList();
+            return _context.MonHocs.ToList();
         }
 
         // GET api/<controller>/5

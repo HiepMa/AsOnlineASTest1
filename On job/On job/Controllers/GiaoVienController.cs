@@ -23,7 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<GiaoVien>> Get()
         {
-            return _context.GiaoViens.Where(x=>x.HienThi==true).Include(x=>x.CumQuyen).ToList();
+            return _context.GiaoViens.Include(x=>x.CumQuyen).ToList();
         }
 
         // GET api/<controller>/5
