@@ -3,32 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Onjob.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Onjob.Controllers
 {
     [Route("api/[controller]")]
-    public class CheckUser : Controller
+    public class CheckUser : ControllerBase
     {
+        private readonly OnJobContext _context;
+        public GiaoVien giaovien;
+        public CheckUser (OnJobContext context)
+        {
+            _context = context;
+        }
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<List<GiaoVien>> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
+            return _context.GiaoViens.ToList();
         }
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post(string username)
         {
+            
         }
 
         // PUT api/<controller>/5
