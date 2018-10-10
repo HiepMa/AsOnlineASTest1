@@ -47,6 +47,7 @@ namespace Onjob.Controllers
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
             loai_CH.ID = kq;
+            loai_CH.HienThi = true;
             _context.Loai_CHes.Add(loai_CH);
             _context.SaveChanges();
             return CreatedAtRoute("Get", new { id = loai_CH.ID }, loai_CH);
@@ -63,7 +64,7 @@ namespace Onjob.Controllers
             }
             loai.TenLoai = loai_CH.TenLoai;
             loai.Xoa = false;
-            loai.HienThi = true;
+            loai.HienThi = loai_CH.HienThi;
             _context.Loai_CHes.Update(loai);
             _context.SaveChanges();
             return NoContent();
