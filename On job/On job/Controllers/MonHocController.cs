@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Onjob.Models;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,11 +22,10 @@ namespace Onjob.Controllers
         }
         // GET: api/MonHoc
         [HttpGet]
-        public ActionResult<List<MonHoc>> Get(bool dk)
+        public ActionResult<List<MonHoc>> Get()
         {
             return _context.MonHocs.Where(x=>x.Xoa==false).ToList();
         }
-
         // GET api/<controller>/5
         [HttpGet("{id}")]
         public ActionResult<MonHoc> Get(long id)
@@ -54,15 +54,14 @@ namespace Onjob.Controllers
             monHoc.NgayCN = monHoc.NgayTao;
             monHoc.NguoiCN = monHoc.NguoiTao;
             //Kiem tra du lieu dau vao
-            if (monHoc.Ma.Length > 30) monHoc.Ma = monHoc.Ma.Remove(30);
-            if (monHoc.Ten.Length > 100) monHoc.Ten = monHoc.Ten.Remove(100);
+            if (monHoc.Ma.Length > 30) return StatusCode(400,"Mã sai độ dài. Mã chỉ có 30 kí tự");
+            if (monHoc.Ten.Length > 100) return StatusCode(400, "Tên sai độ dài. Tên chỉ có 100 kí tự");
             if (monHoc.Khac.Length > 250) monHoc.Khac = monHoc.Khac.Remove(250);
 
             _context.MonHocs.Add(monHoc);
             _context.SaveChanges();
             return monHoc;
         }
-
         // PUT api/<controller>/5
         [HttpPut("{id}")]
         public IActionResult Update(MonHoc monHoc, long id)
@@ -108,5 +107,6 @@ namespace Onjob.Controllers
         {
             return _context.MonHocs.Where(x => x.Ten.Contains(searchText)).ToList();
         }
+
     }
 }
