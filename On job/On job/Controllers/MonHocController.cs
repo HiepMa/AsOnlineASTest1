@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Onjob.Models;
 using Microsoft.AspNetCore.Http;
+using Onjob.Models.Requests;
+using Onjob.Models.Respones;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -54,13 +56,13 @@ namespace Onjob.Controllers
             monHoc.NgayCN = monHoc.NgayTao;
             monHoc.NguoiCN = monHoc.NguoiTao;
             //Kiem tra du lieu dau vao
-            if (monHoc.Ma.Length > 30) return StatusCode(400,"Mã sai độ dài. Mã chỉ có 30 kí tự");
-            if (monHoc.Ten.Length > 100) return StatusCode(400, "Tên sai độ dài. Tên chỉ có 100 kí tự");
+            if (monHoc.Ma.Length > 30) return Ok("Mã dài vượt quá kí tự cho phép");
+            if (monHoc.Ten.Length > 100) return Ok("Tên quá dài vượt quá 100 kí tự.");
             if (monHoc.Khac.Length > 250) monHoc.Khac = monHoc.Khac.Remove(250);
 
             _context.MonHocs.Add(monHoc);
             _context.SaveChanges();
-            return monHoc;
+            return Ok(monHoc);
         }
         // PUT api/<controller>/5
         [HttpPut("{id}")]
@@ -99,6 +101,26 @@ namespace Onjob.Controllers
             _context.MonHocs.Update(mh);
             _context.SaveChanges();
             return NoContent();
+        }
+
+        [HttpPost("CheckUser")]
+        public ActionResult CheckUser(CheckRequest check)
+        {
+            CheckResponse response;
+            var mh = _context.MonHocs.Where(x => x.Ma == check.Ma).SingleOrDefault();
+            if (mh == null)
+            {
+                response = new CheckResponse
+                {
+                    Thongbao = "Mã có thẻ sử dụng được"
+                };
+            }else {
+                response = new CheckResponse
+                {
+                    Thongbao = "Mã đã bị trùng "
+                };
+            }
+            return Ok(response);
         }
 
         //GET api/search
