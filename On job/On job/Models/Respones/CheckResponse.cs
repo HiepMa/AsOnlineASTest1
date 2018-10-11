@@ -8,5 +8,6 @@ namespace Onjob.Models.Respones
     public class CheckResponse
     {
         public string Thongbao { get; set; }
+        public string flag { get; set; }
     }
 }

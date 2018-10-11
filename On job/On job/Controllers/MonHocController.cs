@@ -107,17 +107,28 @@ namespace Onjob.Controllers
         public ActionResult CheckUser(CheckRequest check)
         {
             CheckResponse response;
+            if(check.Ma.Length>30)
+            {
+                response = new CheckResponse
+                {
+                    Thongbao = "Mã dài quá 30 kí tự.",
+                    flag = "0"
+                };
+                return Ok(response);
+            }
             var mh = _context.MonHocs.Where(x => x.Ma == check.Ma).SingleOrDefault();
             if (mh == null)
             {
                 response = new CheckResponse
                 {
-                    Thongbao = "Mã có thẻ sử dụng được"
+                    Thongbao = "Mã có thẻ sử dụng được",
+                    flag = "1"
                 };
             }else {
                 response = new CheckResponse
                 {
-                    Thongbao = "Mã đã bị trùng "
+                    Thongbao = "Mã đã bị trùng ",
+                    flag = "0"
                 };
             }
             return Ok(response);
