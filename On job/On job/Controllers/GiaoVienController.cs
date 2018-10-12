@@ -23,6 +23,7 @@ namespace Onjob.Controllers
         [HttpGet]
         public ActionResult<List<GiaoVien>> Get()
         {
+       
             return _context.GiaoViens.Where(x=>x.Xoa==false).Include(x=>x.CumQuyen).ToList();
         }
 
@@ -40,7 +41,7 @@ namespace Onjob.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public IActionResult Create(GiaoVien giaoVien)
+        public ActionResult<GiaoVien> Create(GiaoVien giaoVien)
         {
             string a = DateTime.Now.ToString("yyyyMMddhh:mm:ss");
             string fag = a.Replace(" ", "");
@@ -48,14 +49,16 @@ namespace Onjob.Controllers
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
             giaoVien.ID = kq;
+            if (giaoVien.Id_Cq == 0) giaoVien.Id_Cq = 1;
             giaoVien.HienThi = true;
             giaoVien.Xoa = false;
+            giaoVien.NgaySinh = new DateTime(giaoVien.NgaySinh.Day,giaoVien.NgaySinh.Month,giaoVien.NgaySinh.Year);
             giaoVien.NgayTao = DateTime.Now;
             giaoVien.NguoiCN = giaoVien.NguoiTao;
             giaoVien.NgayCN = giaoVien.NgayTao;
             _context.GiaoViens.Add(giaoVien);
             _context.SaveChanges();
-            return CreatedAtRoute("Get", new { id = giaoVien.ID }, giaoVien);
+            return giaoVien;
         }
 
         // PUT api/<controller>/5
@@ -71,6 +74,7 @@ namespace Onjob.Controllers
             gv.Ho = gvm.Ho;
             gv.MatKhau = gvm.MatKhau;
             gv.GioiTinh = gvm.GioiTinh;
+            gv.HienThi = gvm.HienThi;
             gv.Email = gvm.Email;
             gv.DiaChi = gvm.DiaChi;
             gv.DienThoai = gvm.DienThoai;

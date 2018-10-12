@@ -30,6 +30,5 @@ namespace Onjob.Models
         public DbSet<PhanQuyen> PhanQuyens { get; set; }
         public DbSet<ThiSinh> ThiSinhs { get; set; }
         public DbSet<CumQuyen> CumQuyens { get; set; }
-
     }
 }

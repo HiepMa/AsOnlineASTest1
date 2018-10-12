@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Onjob.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,61 +12,61 @@ namespace Onjob.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Loai_CHController : ControllerBase
+    public class CauHoiController : ControllerBase
     {
         private readonly OnJobContext _context;
-        public Loai_CHController(OnJobContext context)
+        public CauHoiController(OnJobContext context)
         {
             _context = context;
         }
-        // GET: api/<controller>
+        // GET: api/MonHoc
         [HttpGet]
-        public ActionResult<List<Loai_CH>> Get()
+        public ActionResult<List<CauHoi>> Get()
         {
-            return _context.Loai_CHes.Where(x=>x.Xoa==false).ToList();
+
+            return _context.CauHois.Where(x => x.Xoa == false).Include(x=>x.DeMuc).ToList();
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public ActionResult<Loai_CH> Get(long id)
+        public ActionResult<CauHoi> Get(long id)
         {
-            var dm = _context.Loai_CHes.Find(id);
-            if (dm == null)
+            var ch = _context.CauHois.Find(id);
+            if (ch == null)
             {
                 return NoContent();
             }
-            return dm;
+            return ch;
         }
 
         // POST api/<controller>
         [HttpPost]
-        public IActionResult create(Loai_CH loai_CH)
+        public IActionResult Create(CauHoi cauHoi)
         {
             string a = DateTime.Now.ToString("yyyyMMddhh:mm:ss");
             string fag = a.Replace(" ", "");
             string b = a.Replace("/", "");
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
-            loai_CH.ID = kq;
-            loai_CH.HienThi = true;
-            _context.Loai_CHes.Add(loai_CH);
+            cauHoi.ID = kq;
+           
+            _context.CauHois.Add(cauHoi);
             _context.SaveChanges();
-            return CreatedAtRoute("Get", new { id = loai_CH.ID }, loai_CH);
+            return CreatedAtRoute("Get", new { id = cauHoi.ID }, cauHoi);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult update(long id, Loai_CH loai_CH)
+        public IActionResult Update(long id, CauHoi chm)
         {
-            var loai = _context.Loai_CHes.Find(id);
-            if (loai == null)
+            var ch = _context.CauHois.Find(id);
+            if (ch == null)
             {
                 return NoContent();
             }
-            loai.TenLoai = loai_CH.TenLoai;
-            loai.Xoa = false;
-            loai.HienThi = loai_CH.HienThi;
-            _context.Loai_CHes.Update(loai);
+            
+
+            _context.CauHois.Update(ch);
             _context.SaveChanges();
             return NoContent();
         }
@@ -74,13 +75,13 @@ namespace Onjob.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
-            var loai = _context.Loai_CHes.Find(id);
-            if (loai == null)
+            var ch = _context.CauHois.Find(id);
+            if (ch == null)
             {
                 return NotFound();
             }
-            loai.Xoa = true;
-            _context.Loai_CHes.Update(loai);
+            ch.Xoa = true;
+            _context.CauHois.Update(ch);
             _context.SaveChanges();
             return NoContent();
         }

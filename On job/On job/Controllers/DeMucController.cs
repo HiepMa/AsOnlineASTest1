@@ -13,6 +13,7 @@ namespace Onjob.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class DeMucController : ControllerBase
     {
         private readonly OnJobContext _context;
@@ -72,6 +73,7 @@ namespace Onjob.Controllers
             dm.Ma = deMuc.Ma;
             dm.NgayCN = DateTime.Now;
             dm.NguoiCN = deMuc.NguoiCN;
+            dm.HienThi = deMuc.HienThi;
             dm.Ten = deMuc.Ten;
             dm.Khac = dm.Khac;
 

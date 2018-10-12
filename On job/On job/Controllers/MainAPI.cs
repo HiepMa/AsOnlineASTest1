@@ -20,7 +20,6 @@ namespace Onjob.Controllers
     public class AuthController : ControllerBase
     {
         private readonly OnJobContext _context;
-        public LoginRespone userResult;
         public AuthController (OnJobContext context)
         {
             _context = context;
@@ -31,10 +30,10 @@ namespace Onjob.Controllers
             if(!String.IsNullOrEmpty(request.UserName) && !String.IsNullOrEmpty(request.Password))
             {
                 var user = _context.GiaoViens.Where(x => x.Ma == request.UserName && x.MatKhau == request.Password).SingleOrDefault();
-                if(user != null)
+                if (user != null)
                 {
                     var claimData = new[] { new Claim(ClaimTypes.Name, request.UserName) };
-                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(request.UserName + " "+request.Password));
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(request.UserName + " " + request.Password));
                     var singingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
 
                     var token = new JwtSecurityToken(
@@ -45,7 +44,7 @@ namespace Onjob.Controllers
                         signingCredentials: singingCredentials
                         );
                     var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
-                    userResult = new LoginRespone
+                    var userResult = new LoginRespone
                     {
                         Id = user.ID,
                         Id_Cq = user.Id_Cq,
@@ -56,11 +55,6 @@ namespace Onjob.Controllers
                 }
             }
             return Unauthorized();
-        }
-        [HttpGet]
-        public ActionResult<LoginRespone> Get()
-        {
-            return userResult;
         }
     }
 }
