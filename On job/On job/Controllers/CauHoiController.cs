@@ -49,7 +49,11 @@ namespace Onjob.Controllers
             string c = b.Replace(":", "");
             long kq = long.Parse(c);
             cauHoi.ID = kq;
-           
+            cauHoi.Xoa = false;
+            cauHoi.HienThi = true;
+            cauHoi.NgayTao = DateTime.Now;
+            cauHoi.NguoiCN = cauHoi.NguoiTao;
+            cauHoi.NgayCN = cauHoi.NgayTao;
             _context.CauHois.Add(cauHoi);
             _context.SaveChanges();
             return CreatedAtRoute("Get", new { id = cauHoi.ID }, cauHoi);
@@ -64,7 +68,8 @@ namespace Onjob.Controllers
             {
                 return NoContent();
             }
-            
+            ch = chm;
+            ch.NgayCN = DateTime.Now;
 
             _context.CauHois.Update(ch);
             _context.SaveChanges();
