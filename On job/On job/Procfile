@@ -1,1 +1,1 @@
-web : dotnet run --project .\Onjob.csproj
+web : dotnet run --project '.\On job\Onjob.csproj'
