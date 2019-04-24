@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\On job\\Onjob.csproj": {}
+    "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\Onjob\\Onjob.csproj": {}
   },
   "projects": {
-    "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\On job\\Onjob.csproj": {
+    "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\Onjob\\Onjob.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\On job\\Onjob.csproj",
+        "projectUniqueName": "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\Onjob\\Onjob.csproj",
         "projectName": "Onjob",
-        "projectPath": "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\On job\\Onjob.csproj",
+        "projectPath": "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\Onjob\\Onjob.csproj",
         "packagesPath": "C:\\Users\\nkhiep\\.nuget\\packages\\",
-        "outputPath": "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\On job\\obj\\",
+        "outputPath": "D:\\work\\web\\be\\AsOnlineASTest1\\On job\\Onjob\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

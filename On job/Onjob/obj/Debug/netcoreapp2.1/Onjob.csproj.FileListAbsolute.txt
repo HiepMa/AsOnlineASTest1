@@ -82,3 +82,17 @@ D:\work\web\be\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.Assem
 D:\work\web\be\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.RazorTargetAssemblyInfo.cache
 D:\work\web\be\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.dll
 D:\work\web\be\AsOnlineASTest1\On job\On job\obj\Debug\netcoreapp2.1\Onjob.pdb
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\bin\Debug\netcoreapp2.1\Onjob.deps.json
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\bin\Debug\netcoreapp2.1\Onjob.runtimeconfig.json
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\bin\Debug\netcoreapp2.1\Onjob.runtimeconfig.dev.json
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\bin\Debug\netcoreapp2.1\Onjob.dll
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\bin\Debug\netcoreapp2.1\Onjob.pdb
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.csprojAssemblyReference.cache
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.csproj.CoreCompileInputs.cache
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.RazorAssemblyInfo.cache
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.RazorAssemblyInfo.cs
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.AssemblyInfoInputs.cache
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.AssemblyInfo.cs
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.RazorTargetAssemblyInfo.cache
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.dll
+D:\work\web\be\AsOnlineASTest1\On job\Onjob\obj\Debug\netcoreapp2.1\Onjob.pdb
