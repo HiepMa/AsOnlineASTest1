@@ -1,1 +1,1 @@
-web : dotnet run --project .\webapp\webapp.csproj
+web : dotnet run --project webapp\webapp\webapp.csproj
