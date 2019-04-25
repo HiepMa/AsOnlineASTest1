@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "On_job": {
+    "webapp": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
